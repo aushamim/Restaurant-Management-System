@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Management System</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="drawer drawer-end">
+          <input id="nav-drawer" type="checkbox" class="drawer-toggle" />
+          <div class="drawer-content flex">
+            <!-- Page content here -->
+            <div
+              class="py-5 px-5 xl:px-10 flex items-center w-full bg-red-50 shadow-sm"
+            >
+              <div class="text-2xl font-bold uppercase text-red-600 flex-grow">
+                <a href="./index.html">My Restaurant</a>
+              </div>
+              <div class="hidden xl:flex gap-5">
+                <a
+                  class="hover:text-red-500 font-semibold duration-300"
+                  href="./index.html"
+                  >Home</a
+                >
+                <a
+                  class="hover:text-red-500 font-semibold duration-300"
+                  href="./menu.html"
+                  >Menu</a
+                >
+                <a
+                  class="hover:text-red-500 font-semibold duration-300"
+                  href="./reservations.html"
+                  >Reserve</a
+                >
+                <a
+                  class="hover:text-red-500 font-semibold duration-300"
+                  href="./contact.html"
+                  >Contact Us</a
+                >
+              </div>
+              <div class="block xl:hidden">
+                <label for="nav-drawer" class="block py-1 px-3 cursor-pointer">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                    />
+                  </svg>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="drawer-side">
+            <label
+              for="nav-drawer"
+              aria-label="close sidebar"
+              class="drawer-overlay"
+            ></label>
+            <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+              <!-- Sidebar content here -->
+              <li>
+                <a
+                  class="hover:text-red-500 font-semibold duration-300"
+                  href="./index.html"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-red-500 font-semibold duration-300"
+                  href="./menu.html"
+                  >Menu</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-red-500 font-semibold duration-300"
+                  href="./reservations.html"
+                  >Reserve</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-red-500 font-semibold duration-300"
+                  href="./contact.html"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="min-h-[80vh]">
+      <section>
+        <div class="mt-10 px-5 flex xl:block">
+          <div
+            class="text-3xl xl:text-5xl font-bold text-red-500 uppercase xl:text-center flex-grow"
+          >
+            Food Menu
+          </div>
+          <div>
+            <div class="hidden xl:flex items-center justify-center gap-5 mt-5">
+              <button class="btn btn-sm btn-outline btn-error">
+                Appetizers
+              </button>
+              <button class="btn btn-sm btn-outline btn-error">
+                Main Courses
+              </button>
+              <button class="btn btn-sm btn-outline btn-error">Desserts</button>
+              <button class="btn btn-sm btn-outline btn-error">
+                Beverages
+              </button>
+            </div>
+
+            <div class="dropdown dropdown-end xl:hidden">
+              <div tabindex="0" role="button" class="m-1 flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  class="size-6 stroke-gray-500"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li><button>Appetizers</button></li>
+                <li><button>Main Courses</button></li>
+                <li><button>Desserts</button></li>
+                <li><button>Beverages</button></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="my-10 px-5 xl:px-10 grid grid-cols-1 xl:grid-cols-5 gap-10">
+          <div
+            class="bg-slate-50 rounded-lg overflow-hidden shadow-sm group hover:scale-[1.02] duration-500"
+          >
+            <img
+              class="w-full h-52 object-cover group-hover:scale-105 duration-300"
+              src="https://images.unsplash.com/photo-1576402187878-974f70c890a5"
+              alt=""
+            />
+            <div class="px-3 py-5">
+              <div class="badge badge-primary badge-outline">Appetizer</div>
+              <div class="mt-2">
+                <p class="font-semibold text-xl">Delux Pasta</p>
+                <p class="text-justify text-sm">
+                  One of our specialty. This pasta salad is a great option to
+                  start for your main dish.
+                </p>
+                <div class="grid grid-cols-2 items-center mt-3">
+                  <p class="text-xl font-semibold">250tk</p>
+                  <button class="btn btn-sm btn-outline btn-error">
+                    Order Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-50 rounded-lg overflow-hidden shadow-sm group hover:scale-[1.02] duration-500"
+          >
+            <img
+              class="w-full h-52 object-cover group-hover:scale-105 duration-300"
+              src="https://images.unsplash.com/photo-1506354666786-959d6d497f1a"
+              alt=""
+            />
+            <div class="px-3 py-5">
+              <div class="badge badge-primary badge-outline">Main Course</div>
+              <div class="mt-2">
+                <p class="font-semibold text-xl">Delux Pizza</p>
+                <p class="text-justify text-sm">
+                  One of our specialty. This Pizza salad is a great option to
+                  start for your main dish.
+                </p>
+                <div class="grid grid-cols-2 items-center mt-3">
+                  <p class="text-xl font-semibold">200tk</p>
+                  <button class="btn btn-sm btn-outline btn-error">
+                    Order Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-50 rounded-lg overflow-hidden shadow-sm group hover:scale-[1.02] duration-500"
+          >
+            <img
+              class="w-full h-52 object-cover group-hover:scale-105 duration-300"
+              src="https://plus.unsplash.com/premium_photo-1666649675527-6a7859752c53"
+              alt=""
+            />
+            <div class="px-3 py-5">
+              <div class="badge badge-primary badge-outline">Appetizer</div>
+              <div class="mt-2">
+                <p class="font-semibold text-xl">Handmade Biscuits</p>
+                <p class="text-justify text-sm">
+                  One of our specialty. Biscuits 100% hand made in our
+                  restaurant.
+                </p>
+                <div class="grid grid-cols-2 items-center mt-3">
+                  <p class="text-xl font-semibold">150tk</p>
+                  <button class="btn btn-sm btn-outline btn-error">
+                    Order Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-50 rounded-lg overflow-hidden shadow-sm group hover:scale-[1.02] duration-500"
+          >
+            <img
+              class="w-full h-52 object-cover group-hover:scale-105 duration-300"
+              src="https://images.unsplash.com/photo-1564759077036-3def242e69c5"
+              alt=""
+            />
+            <div class="px-3 py-5">
+              <div class="badge badge-primary badge-outline">Main Course</div>
+              <div class="mt-2">
+                <p class="font-semibold text-xl">Mix Platter</p>
+                <p class="text-justify text-sm">
+                  One of our specialty. Platter mixed with various appetizing
+                  foods.
+                </p>
+                <div class="grid grid-cols-2 items-center mt-3">
+                  <p class="text-xl font-semibold">250tk</p>
+                  <button class="btn btn-sm btn-outline btn-error">
+                    Order Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-50 rounded-lg overflow-hidden shadow-sm group hover:scale-[1.02] duration-500"
+          >
+            <img
+              class="w-full h-52 object-cover group-hover:scale-105 duration-300"
+              src="https://plus.unsplash.com/premium_photo-1677192448752-ca770afef3cb"
+              alt=""
+            />
+            <div class="px-3 py-5">
+              <div class="badge badge-primary badge-outline">Appetizer</div>
+              <div class="mt-2">
+                <p class="font-semibold text-xl">Sweet Buns</p>
+                <p class="text-justify text-sm">
+                  One of our specialty. These buns are filled with extra creamy
+                  fillings.
+                </p>
+                <div class="grid grid-cols-2 items-center mt-3">
+                  <p class="text-xl font-semibold">200tk</p>
+                  <button class="btn btn-sm btn-outline btn-error">
+                    Order Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-50 rounded-lg overflow-hidden shadow-sm group hover:scale-[1.02] duration-500"
+          >
+            <img
+              class="w-full h-52 object-cover group-hover:scale-105 duration-300"
+              src="https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+            <div class="px-3 py-5">
+              <div class="badge badge-primary badge-outline">Main Course</div>
+              <div class="mt-2">
+                <p class="font-semibold text-xl">Breakfast Platter</p>
+                <p class="text-justify text-sm">
+                  Start your day with the perfect breakfast with our breakfast
+                  platter.
+                </p>
+                <div class="grid grid-cols-2 items-center mt-3">
+                  <p class="text-xl font-semibold">100tk</p>
+                  <button class="btn btn-sm btn-outline btn-error">
+                    Order Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-50 rounded-lg overflow-hidden shadow-sm group hover:scale-[1.02] duration-500"
+          >
+            <img
+              class="w-full h-52 object-cover group-hover:scale-105 duration-300"
+              src="https://plus.unsplash.com/premium_photo-1668095398227-c943ddb69d89?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+            <div class="px-3 py-5">
+              <div class="badge badge-primary badge-outline">Main Course</div>
+              <div class="mt-2">
+                <p class="font-semibold text-xl">Japanese Traditional Food</p>
+                <p class="text-justify text-sm">
+                  You can now enjoy Japanese traditional foods in our
+                  restaurant.
+                </p>
+                <div class="grid grid-cols-2 items-center mt-3">
+                  <p class="text-xl font-semibold">450tk</p>
+                  <button class="btn btn-sm btn-outline btn-error">
+                    Order Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-50 rounded-lg overflow-hidden shadow-sm group hover:scale-[1.02] duration-500"
+          >
+            <img
+              class="w-full h-52 object-cover group-hover:scale-105 duration-300"
+              src="https://images.unsplash.com/photo-1520347788611-1654e613e422?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+            <div class="px-3 py-5">
+              <div class="badge badge-primary badge-outline">Appetizer</div>
+              <div class="mt-2">
+                <p class="font-semibold text-xl">Mixed Nut Dessert</p>
+                <p class="text-justify text-sm">
+                  One of our specialty. Rich with mixed nuts and other nutritius
+                  foods to appetize your tastes.
+                </p>
+                <div class="grid grid-cols-2 items-center mt-3">
+                  <p class="text-xl font-semibold">250tk</p>
+                  <button class="btn btn-sm btn-outline btn-error">
+                    Order Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-50 rounded-lg overflow-hidden shadow-sm group hover:scale-[1.02] duration-500"
+          >
+            <img
+              class="w-full h-52 object-cover group-hover:scale-105 duration-300"
+              src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+            <div class="px-3 py-5">
+              <div class="badge badge-primary badge-outline">Main Course</div>
+              <div class="mt-2">
+                <p class="font-semibold text-xl">Steak</p>
+                <p class="text-justify text-sm">
+                  One of our specialty. Rich flavoured and textured premium meat
+                  to be your main dish.
+                </p>
+                <div class="grid grid-cols-2 items-center mt-3">
+                  <p class="text-xl font-semibold">450tk</p>
+                  <button class="btn btn-sm btn-outline btn-error">
+                    Order Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="text-center py-10 text-white bg-[#2b0c0c]">
+        <h1 class="text-2xl font-bold uppercase text-red-500 flex-grow">
+          My Restaurant
+        </h1>
+        <p class="mt-3 text-sm">© 2024 My Restaurant. All rights reserved.</p>
+        <p class="mt-3 text-sm font-semibold">
+          <a href="">Privacy Policy</a>
+          <span class="mx-1">|</span>
+          <a href="">Sitemap</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

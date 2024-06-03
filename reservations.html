@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Management System</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="drawer drawer-end">
+          <input id="nav-drawer" type="checkbox" class="drawer-toggle" />
+          <div class="drawer-content flex">
+            <!-- Page content here -->
+            <div
+              class="py-5 px-5 xl:px-10 flex items-center w-full bg-red-50 shadow-sm"
+            >
+              <div class="text-2xl font-bold uppercase text-red-600 flex-grow">
+                <a href="./index.html">My Restaurant</a>
+              </div>
+              <div class="hidden xl:flex gap-5">
+                <a
+                  class="hover:text-red-500 font-semibold duration-300"
+                  href="./index.html"
+                  >Home</a
+                >
+                <a
+                  class="hover:text-red-500 font-semibold duration-300"
+                  href="./menu.html"
+                  >Menu</a
+                >
+                <a
+                  class="hover:text-red-500 font-semibold duration-300"
+                  href="./reservations.html"
+                  >Reserve</a
+                >
+                <a
+                  class="hover:text-red-500 font-semibold duration-300"
+                  href="./contact.html"
+                  >Contact Us</a
+                >
+              </div>
+              <div class="block xl:hidden">
+                <label for="nav-drawer" class="block py-1 px-3 cursor-pointer">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                    />
+                  </svg>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="drawer-side">
+            <label
+              for="nav-drawer"
+              aria-label="close sidebar"
+              class="drawer-overlay"
+            ></label>
+            <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+              <!-- Sidebar content here -->
+              <li>
+                <a
+                  class="hover:text-red-500 font-semibold duration-300"
+                  href="./index.html"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-red-500 font-semibold duration-300"
+                  href="./menu.html"
+                  >Menu</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-red-500 font-semibold duration-300"
+                  href="./reservations.html"
+                  >Reserve</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-red-500 font-semibold duration-300"
+                  href="./contact.html"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="min-h-[80vh]">
+      <section>
+        <div class="py-20">
+          <h1
+            class="text-3xl xl:text-5xl font-bold text-red-500 uppercase text-center"
+          >
+            Reservation
+          </h1>
+          <p class="text-sm text-center mt-1">
+            Please enter the following information to reserve a table beforehand
+          </p>
+          <form class="mt-10 w-11/12 xl:w-1/3 mx-auto">
+            <label class="form-control w-full mb-2">
+              <div class="label">
+                <span class="label-text">Name</span>
+              </div>
+              <input
+                type="text"
+                placeholder="Type your name here"
+                class="input input-bordered w-full"
+                required
+              />
+            </label>
+            <label class="form-control w-full mb-2">
+              <div class="label">
+                <span class="label-text">Email</span>
+              </div>
+              <input
+                type="email"
+                placeholder="Type your email here"
+                class="input input-bordered w-full"
+                required
+              />
+            </label>
+            <label class="form-control w-full mb-2">
+              <div class="label">
+                <span class="label-text">Phone No.</span>
+              </div>
+              <input
+                type="text"
+                placeholder="Type your phone no here"
+                class="input input-bordered w-full"
+                required
+              />
+            </label>
+            <label class="form-control w-full mb-2">
+              <div class="label">
+                <span class="label-text">Arrival Date & Time</span>
+              </div>
+              <input
+                type="datetime-local"
+                class="input input-bordered w-full"
+                required
+              />
+            </label>
+            <label class="form-control w-full mb-2">
+              <div class="label">
+                <span class="label-text">Number of Guests</span>
+              </div>
+              <input
+                type="number"
+                placeholder="How many guests will accompany you?"
+                class="input input-bordered w-full"
+                required
+              />
+            </label>
+            <label class="form-control w-full mb-2">
+              <div class="label">
+                <span class="label-text">Special Requests</span>
+                <span class="label-text text-xs">(optional)</span>
+              </div>
+              <textarea
+                class="textarea textarea-bordered"
+                placeholder="Write any special requests here"
+              ></textarea>
+            </label>
+
+            <input
+              class="btn btn-error text-white mt-5 block ml-auto uppercase"
+              type="submit"
+              value="Submit"
+            />
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="text-center py-10 text-white bg-[#2b0c0c]">
+        <h1 class="text-2xl font-bold uppercase text-red-500 flex-grow">
+          My Restaurant
+        </h1>
+        <p class="mt-3 text-sm">© 2024 My Restaurant. All rights reserved.</p>
+        <p class="mt-3 text-sm font-semibold">
+          <a href="">Privacy Policy</a>
+          <span class="mx-1">|</span>
+          <a href="">Sitemap</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
